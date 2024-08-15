@@ -1,0 +1,20 @@
+@use "../base/colors" as *;
+@use "../abstract/variables" as *;
+@use "../abstract/breakpoint" as *;
+
+.features__card {
+    border-radius: 5px;
+    border-top-width: 3px;
+    border-top-style: solid;
+    box-shadow: 3px 6px 8px 6px hsl(229deg 6% 66% / 30%);
+    background-color: white;
+    padding: 20px;
+    @each $name, $color in $card-colors {
+        &--#{$name} {
+            border-top-color: $color;
+        }
+    }
+    @include breakpoint(desktop) {
+        max-width: 350px;
+    }
+}
